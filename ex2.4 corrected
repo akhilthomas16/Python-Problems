@@ -1,0 +1,11 @@
+SELECT city, 
+	count(distinct case when ptype = 'employee' then pid end) as employee_count,
+	count(distinct case when ptype = 'customer' then pid end) as customer_count
+       
+FROM ( 
+    SELECT CAST(employee_id AS TEXT) AS pid, city, 'employee' as ptype FROM employees
+    UNION ALL
+    SELECT CAST(customer_id AS TEXT) AS pid, city, 'customer' as ptype FROM customers
+) AS combined
+GROUP BY city
+ORDER BY city;
