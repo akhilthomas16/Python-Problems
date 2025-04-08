@@ -1,0 +1,7 @@
+BEGIN TRANSACTION;
+
+UPDATE employees
+SET home_phone = '(0489)235-2917'
+WHERE employee_id = '10';
+
+COMMIT;

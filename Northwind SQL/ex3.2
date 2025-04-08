@@ -1,0 +1,4 @@
+SELECT OD.product_id, SUM(OD.Quantity) AS TotalQuantityOrdered
+FROM order_details OD
+GROUP BY OD.product_id
+HAVING SUM(OD.Quantity) < 200;

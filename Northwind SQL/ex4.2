@@ -1,0 +1,6 @@
+BEGIN TRANSACTION;
+
+INSERT INTO orders (order_id, customer_id, employee_id, order_date, required_date)
+VALUES ('11078', 'ALFKI', (SELECT employee_id FROM employees WHERE first_name = 'Akhil' AND last_name = 'Thomas'), '2025-04-07', '2025-06-17');
+
+COMMIT;

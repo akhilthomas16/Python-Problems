@@ -1,0 +1,10 @@
+BEGIN TRANSACTION;
+
+DELETE FROM employees
+WHERE employee_id = '10';
+
+DELETE FROM order_details
+WHERE order_id = '11078'
+AND product_id = '17';
+
+COMMIT;

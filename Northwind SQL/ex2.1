@@ -1,0 +1,5 @@
+SELECT O.order_id, O.order_date, O.customer_id, C.company_name AS contact_name
+FROM orders O
+JOIN customers C ON O.customer_id = C.customer_id
+WHERE EXTRACT(YEAR FROM O.order_date) = 1996
+ORDER BY O.order_date;

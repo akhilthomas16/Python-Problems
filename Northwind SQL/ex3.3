@@ -1,0 +1,5 @@
+SELECT O.customer_id, COUNT(O.order_id) AS TotalOrders
+FROM orders O
+WHERE O.order_date > '1996-12-31'
+GROUP BY O.customer_id
+HAVING COUNT(O.order_id) > 15;

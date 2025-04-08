@@ -1,0 +1,8 @@
+BEGIN TRANSACTION;
+
+UPDATE order_details
+SET quantity = quantity * 2
+WHERE order_id = '11078'
+  AND product_id = '17';
+
+COMMIT;

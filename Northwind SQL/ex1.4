@@ -1,0 +1,3 @@
+SELECT COUNT(*) AS OrderCount
+FROM orders
+WHERE EXTRACT(YEAR FROM order_date) = 1997;

@@ -1,0 +1,10 @@
+BEGIN TRANSACTION;
+
+UPDATE order_details
+SET quantity = quantity * 2
+WHERE order_id IN (
+	SELECT order_id FROM orders
+	WHERE employee_id = '10'
+);
+
+COMMIT;

@@ -1,0 +1,5 @@
+SELECT C.city, COUNT(DISTINCT E.employee_id) AS employee_count, COUNT(DISTINCT C.customer_id) AS customer_count
+FROM customers C
+LEFT JOIN employees E ON C.city = E.city
+GROUP BY C.city
+ORDER BY C.city;
